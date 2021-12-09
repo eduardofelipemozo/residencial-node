@@ -37,5 +37,5 @@ app.use('/api/v1/visited', visitedRoutes);
 app.use('/api/v1/car', carRoutes);
 
 app.listen(port, () => {
-    console.log(`Express nodemon corriendo en el puerto ${port}`);
+    console.log(`Corriendo en el puerto ${port}`);
 })
