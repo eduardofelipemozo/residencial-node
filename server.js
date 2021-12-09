@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {
-    res.send('Este trabajo fue realizado por : Omar Chong, Francisco Rangel, Eduardo Garcia y Luis Fernando Ramos');
+    res.send('Proyecto levantado conectado');
 })
 
 //importar ruta visitas.
