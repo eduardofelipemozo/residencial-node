@@ -2,11 +2,11 @@
 var dbConn = require('./../../config/db.config');
 
 var Residente = function(residente){
-    this.nombre     = residente.nombre;
-    this.app      = residente.app;
-    this.apm          = residente.apm;
-    this.telefono     = residente.telefono;
-    this.email = residente.email;
+    this.nombre_resi     = residente.nombre;
+    this.app_resi      = residente.app;
+    this.apm_resi          = residente.apm;
+    this.telefono_resi     = residente.telefono;
+    this.email_resi = residente.email;
     this.casa_id = residente.casa_id;
     //this.created_at     = new Date();
     //this.updated_at     = new Date();
@@ -53,7 +53,7 @@ Residente.findAll = function (result) {
 };
 
 Residente.update = function(id, residentes, result){
-    dbConn.query("UPDATE residentes SET nombre=?,app=?,apm=?,telefono=?,email=?,casa_id=? WHERE id = ?", [residentes.nombre,residentes.app,residentes.apm,residentes.telefono,residentes.email,residentes.casa_id ,id], function (err, res) {
+    dbConn.query("UPDATE residentes SET nombre=?,app=?,apm=?,telefono=?,email=?,casa_id=? WHERE id = ?", [residentes.nombre_resi,residentes.app_resi,residentes.apm_resi,residentes.telefono_resi,residentes.email_resi,residentes.casa_id ,id], function (err, res) {
           if(err) {
               console.log("error: ", err);
               result(null, err);
