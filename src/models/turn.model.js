@@ -20,7 +20,7 @@
  }
 
  Turn.getAllTurnById = (id, result) => {
-     dbConn.query('SELECT * FROM turnos WHERE id_turno=?',id,(err,res) => {
+     dbConn.query('SELECT * FROM turnos WHERE id=?',id,(err,res) => {
          if(err){
              console.log('Error while fetching turn by id', err);
              result(null, err);
@@ -44,7 +44,7 @@
 
 
  Turn.updateTurn = (id, turnData, result) => {
-     dbConn.query("UPDATE turnos SET nombre_turno=?, estatus_turno=? WHERE id_turno",[turnData.nombre_turno, turnData.estatus_turno, turnData.id_turno,id], (err, res) => {
+     dbConn.query("UPDATE turnos SET nombre_turno=?, estatus_turno=? WHERE id",[turnData.nombre_turno, turnData.estatus_turno, turnData.id,id], (err, res) => {
          if(err){
              console.log('Error while updating the car');
              result(null, err);
@@ -56,7 +56,7 @@
  }
 
  Turn.deleteTurn = (id, result) => {
-     dbConn.query('DELETE FROM turnos WHERE id_turno=?',[id],(err, res) =>{
+     dbConn.query('DELETE FROM turnos WHERE id=?',[id],(err, res) =>{
          if(err){
              console.log('Error while deleting the turn');
              result(null, err);
