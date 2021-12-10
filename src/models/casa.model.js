@@ -7,8 +7,8 @@ var Casa = function(Casa){
     this.direccion_casa     = Casa.direccion_casa;
     this.color_casa          = Casa.color_casa;
     this.referencia_casa     = Casa.referencia_casa;
-    this.created_at     = new Date();
-    this.updated_at     = new Date();
+    // this.created_at     = new Date();
+    // this.updated_at     = new Date();
 };
 Casa.create = function (newCasa, result) {    
     dbConn.query("INSERT INTO casas set ?", newCasa, function (err, res) {
@@ -46,7 +46,7 @@ Casa.findAll = function (result) {
     });   
 };
 Casa.update = function(id, Casa, result){
-  dbConn.query("UPDATE casas SET numerocasa=?,direccion=?,color=?,referencia=? WHERE id = ?", [Casa.num_casa,Casa.direccion_casa,Casa.color_casa,Casa.referencia_casa, id], function (err, res) {
+  dbConn.query("UPDATE casas SET num_casa=?,direccion_casa=?,color_casa=?,referencia_casa=? WHERE id = ?", [Casa.num_casa,Casa.direccion_casa,Casa.color_casa,Casa.referencia_casa, id], function (err, res) {
         if(err) {
             console.log("error: ", err);
             result(null, err);
