@@ -63,7 +63,7 @@ Car.getAllCarById = (id, result) => {
 // }
 
 Car.updateCar = function(id, Car, result){
-    dbConn.query("UPDATE vehiculos SET marca_carro=?, modelo_carro=?, color_carro=?, placas_carro=?, foto_carro=?, observaciones=? WHERE id_vehiculo = ?", [Car.marca_carro,Car.modelo_carro,Car.color_carro,Car.placas_carro,Car.foto_carro,Car.observacion, id], function (err, res) {
+    dbConn.query("UPDATE vehiculos SET marca_carro=?, modelo_carro=?, color_carro=?, placas_carro=?, foto_carro=?, observaciones=? WHERE id_vehiculo = ?", [Car.marca_carro,Car.modelo_carro,Car.color_carro,Car.placas_carro,Car.foto_carro,Car.observaciones, id], function (err, res) {
           if(err) {
               console.log("error: ", err);
               result(null, err);
