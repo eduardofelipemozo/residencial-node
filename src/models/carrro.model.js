@@ -9,7 +9,7 @@
      this.foto_carro = car.foto_carro;
      this.observaciones = car.observaciones;
  }
-// CREATE NEW CAR 
+  
 Car.createCar = (carData, result) => {
     dbConn.query('INSERT INTO vehiculos SET ? ', carData,(err, res) => {
         if(err){
@@ -21,7 +21,7 @@ Car.createCar = (carData, result) => {
         }
     })
 }
-//  Get all Car
+
 Car.getAllCar = (result) => {
     dbConn.query('SELECT * FROM vehiculos', (err, res) =>{
         if(err) {
@@ -35,8 +35,6 @@ Car.getAllCar = (result) => {
     })
 }
 
-// GET CAR BY ID FORM DB
-
 Car.getAllCarById = (id, result) => {
     dbConn.query('SELECT * FROM vehiculos WHERE id_vehiculo=?',id, (err, res) =>{
         if(err){
@@ -48,19 +46,6 @@ Car.getAllCarById = (id, result) => {
     })
 } 
 
-
-
-// Car.updateCar = function(id, carData, result){
-//     dbConn.query("UPDATE vehiculos SET marca_carro=?, modelo_carro=?, color_carro=?, placas_carro=?, foto_carro=?, observaciones=? WHERE id_vehiculo=?",[carData.marca_carro, carData.modelo_carro, carData.color_carro, carData.placas_carro, carData.foto_carro, carData.observaciones, carData.id_vehiculo, id], (err, res) => {
-//         if(err){
-//             console.log('Error while updating the car');
-//             result(null, err);
-//         }else {
-//             console.log("Car updated successfully");
-//             result(null, res);
-//         }
-//     });
-// }
 
 Car.updateCar = function(id, Car, result){
     dbConn.query("UPDATE vehiculos SET marca_carro=?, modelo_carro=?, color_carro=?, placas_carro=?, foto_carro=?, observaciones=? WHERE id_vehiculo = ?", [Car.marca_carro,Car.modelo_carro,Car.color_carro,Car.placas_carro,Car.foto_carro,Car.observaciones, id], function (err, res) {
