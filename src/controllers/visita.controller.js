@@ -26,7 +26,7 @@ exports.create = (req, res) => {
 
     const new_visita= new Visita(req.body);
    
-    if (req.body.contructor === Object && Object.keys(req.body).length === 0) {
+    if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.send(400).send({ success: true, message: 'Please fill all fields' })
     } else {
 
