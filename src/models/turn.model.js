@@ -43,8 +43,8 @@
  }
 
 
- Turn.updateTurn = (id, turnData, result) => {
-     dbConn.query("UPDATE turnos SET nombre_turno=?, estatus_turno=? WHERE id",[turnData.nombre_turno, turnData.estatus_turno, turnData.id,id], (err, res) => {
+ Turn.updateTurn = function(id, turnData, result) {
+     dbConn.query("UPDATE turnos SET nombre_turno=?, estatus_turno=? WHERE id = ?",[turnData.nombre_turno, turnData.estatus_turno,id], function(err, res) {
          if(err){
              console.log('Error while updating the car');
              result(null, err);
@@ -53,7 +53,7 @@
              result(null, res);
          }
      });
- }
+ };
 
  Turn.deleteTurn = (id, result) => {
      dbConn.query('DELETE FROM turnos WHERE id=?',[id],(err, res) =>{

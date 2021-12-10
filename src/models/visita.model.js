@@ -2,7 +2,7 @@ var dbConn = require('../../config/db.config');
 
 var Visita = function (visita) {
 
-    this.id_visitante = visita.id_vistante;
+    this.id_visitante = visita.id_visitante;
     this.id_residente = visita.id_residente;
 
 
