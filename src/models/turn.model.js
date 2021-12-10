@@ -2,8 +2,8 @@
 
 
  var Turn = function(turn){
-     this.nombre =  turn.nombre;
-     this.estatus = turn.estatus;
+     this.nombre_turno =  turn.nombre_turno;
+     this.estatus_turno = turn.estatus_turno;
  }
 
  Turn.getAllTurn = (result) => {
@@ -44,7 +44,7 @@
 
 
  Turn.updateTurn = (id, turnData, result) => {
-     dbConn.query("UPDATE turnos SET nombre=?, estatus=? WHERE id_turno",[turnData.nombre, turnData.estatus, turnData.id_turno,id], (err, res) => {
+     dbConn.query("UPDATE turnos SET nombre_turno=?, estatus_turno=? WHERE id_turno",[turnData.nombre_turno, turnData.estatus_turno, turnData.id_turno,id], (err, res) => {
          if(err){
              console.log('Error while updating the car');
              result(null, err);
