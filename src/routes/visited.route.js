@@ -1,21 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const visitantesController = require('../controllers/visitantes.controller');
+const visitedController = require('../controllers/visited.controller');
 
+// Get all visited
+router.get('/', visitedController.getVisitedList);
 
-router.get('/', visitantesController.getVisitantesList);
+// Get visited by id 
+router.get('/:id',visitedController.getAllVisitedById);
 
- 
-router.get('/:id',visitantesController.getAllVisitantesById);
+// Create new visited
+router.post('/', visitedController.createNewVisited);
 
+// Update visited
+router.put('/:id', visitedController.updateVisited);
 
-router.post('/', visitantesController.createNewVisitantes);
-
-
-router.put('/:id', visitantesController.updateVisitantes);
-
-
-router.delete('/:id', visitantesController.deleteVisitantes);
+// Delete visited
+router.delete('/:id', visitedController.deleteVisited);
 
 module.exports = router;
