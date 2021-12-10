@@ -1,7 +1,7 @@
 const VisitedModel = require('../models/visited.model');
 
 exports.getVisitedList = (req, res)=> {
-    // console.log('Here all visited list');
+   
     VisitedModel.getAllVisited((err, visited) =>{
         console.log('We are here');
         if(err)
@@ -11,9 +11,9 @@ exports.getVisitedList = (req, res)=> {
     })
 }
 
-// Get empployee by ID
+
 exports.getAllVisitedById = (req, res) =>{
-    // console.log('get visit by id');
+    
     VisitedModel.getAllVisitedById(req.params.id, (err, visited) =>{
         if(err)
         res.send(err);
@@ -22,7 +22,7 @@ exports.getAllVisitedById = (req, res) =>{
     })
 }
 
-// Create new Visited 
+
 exports.createNewVisited = (req, res) =>{
     const visitedData = new VisitedModel(req.body);
     console.log('visitedData',visitedData);
@@ -32,12 +32,12 @@ exports.createNewVisited = (req, res) =>{
         VisitedModel.createVisited(visitedData, (err, visited) =>{
             if(err)
             res.send(err);
-            res.json({status: true, message: 'Visited Created Successfully', data: visited.insertId})
-        })
+            res.json({status: true, message: 'Visited Created Successfully', data: visited.insertId});
+        });
     }
 }
 
-// Updated visited
+
 
 exports.updateVisited = (req, res) => {
     const visitedData = new VisitedModel(req.body);
@@ -48,12 +48,12 @@ exports.updateVisited = (req, res) => {
         VisitedModel.updateVisited(req.params.id, visitedData, (err, visited) =>{
             if(err)
             res.send(err);
-            res.json({status: true, message: 'Visited Updated Successfully'})
-        })
+            res.json({status: true, message: 'Visited Updated Successfully'});
+        });
     }
 }
 
-// delete visited
+
 exports.deleteVisited = (req, res) => {
     VisitedModel.deleteVisited(req.params.id, (err, visited) => {
         if(err)
@@ -61,3 +61,4 @@ exports.deleteVisited = (req, res) => {
         res.json({success:true, message: 'Visited deleted successfully'});
     });
 }
+

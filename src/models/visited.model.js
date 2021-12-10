@@ -12,7 +12,7 @@ var Visited = function (visited){
 
 // Get all visited
 Visited.getAllVisited = (result) =>{
-    dbConn.query('SELECT t.id_visitante, t.nombre, t.appaterno, t.apmaterno, t.ine, t.licencia, t.imagen, t.id_vehiculo, v.marca AS vehiculo FROM visitantes AS t INNER JOIN vehiculos AS v ON v.id_vehiculo = t.id_vehiculo', (err, res)=>{
+    dbConn.query('SELECT t.id_visitante, t.nombre, t.appaterno, t.apmaterno, t.ine, t.licencia, t.imagen, t.id_vehiculo, v.marca_carro AS vehiculo FROM visitantes AS t INNER JOIN vehiculos AS v ON v.id_vehiculo = t.id_vehiculo', (err, res)=>{
         if(err){
             console.log('Error while fetching visited', err);
             result(null, err);
@@ -25,7 +25,7 @@ Visited.getAllVisited = (result) =>{
 
 // Get visited  by id from BD
 Visited.getAllVisitedById = (id, result) => {
-    dbConn.query('SELECT t.id_visitante, t.nombre, t.appaterno, t.apmaterno, t.ine, t.licencia, t.imagen, t.id_vehiculo, v.marca AS vehiculo FROM visitantes AS t INNER JOIN vehiculos AS v ON v.id_vehiculo = t.id_vehiculo WHERE id_visitante=?', id, (err, res)=>{
+    dbConn.query('SELECT t.id_visitante, t.nombre, t.appaterno, t.apmaterno, t.ine, t.licencia, t.imagen, t.id_vehiculo, v.marca_carro AS vehiculo FROM visitantes AS t INNER JOIN vehiculos AS v ON v.id_vehiculo = t.id_vehiculo WHERE id_visitante=?', id, (err, res)=>{
         if(err){
             console.log('Error while fetching visited by id', err);
             result(null, err);

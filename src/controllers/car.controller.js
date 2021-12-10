@@ -28,7 +28,7 @@
          CarModel.createCar(carData, (err, car) => {
              if(err)
              res.send(err);
-             res.json({status: true, message: 'Car created successfully', data: car.insertId})
+             res.json({status: true, message: 'Vehiculo agregado correctamente', data: car.insertId})
          })
      }
  }
@@ -54,7 +54,7 @@ exports.updateCar = function(req, res) {
         CarModel.updateCar(req.params.id, new CarModel(req.body), function(err, casa) {
             if (err)
             res.send(err);
-            res.json({ error:false, message: 'CC successfully updated' });
+            res.json({ error:false, message: 'carro actualizado correctamente' });
         });
     }
   
