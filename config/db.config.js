@@ -4,7 +4,7 @@ const dbConn = mysql.createConnection({
     host: "database-1.cd0ithle1pfb.us-east-1.rds.amazonaws.com",
 	user: "admin",
 	password: "xvP5&$cr0R3o",
-	database: "gpschido",
+	database: "basechida",
 });
 
 dbConn.connect(function(error){
