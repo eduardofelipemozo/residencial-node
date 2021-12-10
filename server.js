@@ -15,13 +15,13 @@ const swaggerSpec = {
         },
         servers:[
             {
-                url:"https://residencial-node1.herokuapp.com/"
+                url:"http://localhost:5000"
             }
         ]
     },
     apis:[`${path.join(__dirname,"./src/routes/*.js")}`]
 }
-app.use(cors());
+
 const app = express();
 
 
