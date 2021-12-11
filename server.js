@@ -16,6 +16,7 @@ const swaggerSpec = {
         servers:[
             {
                 url:"https://residencial-node1.herokuapp.com"
+                //url:"http://localhost:5000"
             }
         ]
     },
