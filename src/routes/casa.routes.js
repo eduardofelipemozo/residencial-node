@@ -44,7 +44,7 @@ router.get('/', casaController.findAll);
  *              type: object
  *              $ref: '#/components/schemas/Casa'
  *    404:
- *      description: vehiculo no encontrado
+ *      description: casa no encontrado
  *        
  */
 
