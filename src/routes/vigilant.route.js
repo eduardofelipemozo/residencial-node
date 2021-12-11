@@ -8,7 +8,7 @@
  router.get('/:id',vigilantController.getAllVigilantById);
 
  router.post('/',vigilantController.createNewVigilant);
-
+ 
  router.put('/:id',vigilantController.updateVigilant);
 
  router.delete('/:id',vigilantController.deleteVigilant);

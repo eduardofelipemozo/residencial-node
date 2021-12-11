@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors');
+// const cors = require('cors');
 
 // swagger
 const swaggerUI = require('swagger-ui-express')
@@ -15,7 +15,8 @@ const swaggerSpec = {
         },
         servers:[
             {
-                url:"https://residencial-node1.herokuapp.com"
+                // url:"https://residencial-node1.herokuapp.com"
+                url:"http://localhost:5000"
             }
         ]
     },
@@ -23,7 +24,7 @@ const swaggerSpec = {
 }
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 
 
 const port = process.env.PORT || 5000;

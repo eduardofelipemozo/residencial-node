@@ -23,21 +23,21 @@ exports.getAllVigilantById = (req, res) =>{
 exports.createNewVigilant = (req, res) =>{
     const vigilantData = new VigilantModel(req.body);
     console.log('vigilantData',vigilantData);
-    if(req.body.contructor === Object && Object.keys(req.body).length === 0){
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
         res.send(400).send({success:false, message: 'Please fill all fields'});
     }else{
         VigilantModel.createVigilant(vigilantData, (err, vigilant) =>{
             if(err)
             res.send(err);
-            res.json({status: true, message: 'Vigilant Created Successfully', data: vigilant.insertId})
-        })
+            res.json({status: true, message: 'Vigilant Created Successfully', data: vigilant.insertId});
+        });
     }
 }
 
 exports.updateVigilant = (req, res) => {
     const vigilantData = new VigilantModel(req.body);
     console.log('vigilantData update',vigilantData);
-    if(req.body.contructor === Object && Object.keys(req.body).length === 0){
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
         res.send(400).send({success:false, message: 'Please fill all fields'});
     }else{
         VigilantModel.updateVigilant(req.params.id, vigilantData, (err, vigilant) =>{
