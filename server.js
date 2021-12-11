@@ -35,14 +35,14 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('Proyecto levantado conectado');
-})
+});
 
-app.use("/api-doc",swaggerUI.serve,swaggerUI.setup(swaggerJsDoc(swaggerSpec)))
+app.use("/api-doc",swaggerUI.serve,swaggerUI.setup(swaggerJsDoc(swaggerSpec)));
 
 //importar ruta visitas.
 const visitaRoutes = require('./src/routes/visita.route');
-const residentesRoutes = require('./src/routes/residentes.routes')
-const casaRoutes = require('./src/routes/casa.routes')
+const residentesRoutes = require('./src/routes/residentes.routes');
+const casaRoutes = require('./src/routes/casa.routes');
 const turnRoutes = require('./src/routes/turn.route');
 const vigilantRoutes = require('./src/routes/vigilant.route');
 const visitedRoutes = require('./src/routes/visited.route');
